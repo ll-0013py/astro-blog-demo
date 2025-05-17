@@ -29,7 +29,7 @@ const { frontmatter } = Astro.props;
 </head>
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>{frontmatter.pubDate.slice(0, 10)}</p>
+  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
   <img src={frontmatter.eyecatch.url} alt={frontmatter.eyecatch.alt} />
   <slot />
   <div class="tags">
