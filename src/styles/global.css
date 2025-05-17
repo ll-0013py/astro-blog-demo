@@ -1,0 +1,110 @@
+/* ============================= */
+/* 基本レイアウトスタイル       */
+/* ============================= */
+
+html {
+  background-color: rgb(225, 235, 239);
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/* 区切り線                      */
+/* ============================= */
+
+hr.full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  border: none;
+  border-top: 3px solid black;
+}
+
+/* ============================= */
+/* ナビゲーション全体の設定      */
+/* ============================= */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 50px; /* 高さ確保 */
+  margin-bottom: 1rem;
+}
+
+/* ============================= */
+/* PC用ナビリンク                */
+/* ============================= */
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: orange;
+}
+
+/* ============================= */
+/* ハンバーガーメニュー（非表示）*/
+/* ============================= */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding-right: 20px;
+  flex-direction: column;
+}
+
+.line {
+  display: block;
+  width: 40px;         /* 親 .hamburger の幅に合わせる */
+  height: 5px;         /* 高さを明示的に設定 */
+  background-color: orange;
+  margin-bottom: 10px;
+}
+
+
+/* ============================= */
+/* スマホサイズでの表示切替     */
+/* ============================= */
+
+@media (max-width: 768px) {
+  /* ハンバーガーメニュー表示 */
+  .hamburger {
+    display: flex;
+  }
+
+  /* ナビリンク非表示（初期） */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  /* ハンバーガークリック時に表示 */
+  .expanded {
+    display: block;
+  }

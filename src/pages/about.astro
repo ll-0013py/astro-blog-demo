@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/Baselayouts.astro";
+
+const pageTitle = "About page";
+
+const identity = {
+  name: "Ray",
+  country: "Japan",
+  occupation: "Student",
+};
+
+const infoColor = "purple";
+---
+
+<style define:vars={{ infoColor }}>
+  h1 {
+    color: red;
+    font-size: 20px;
+  }
+  h2 {
+    color: blue;
+    font-size: 16px;
+  }
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+  <h3>今回はAstroを使ってデモサイトを作ってみます。</h3>
+  <h3>CSSをテストしてみます。</h3>
+  <p>色々なフロントエンドの知識を学習していきます。</p>
+  <p>私について</p>
+  <ul>
+    <li>
+      <p>名前: {identity.name}</p>
+    </li>
+    <li>
+      <p>国: {identity.country}</p>
+    </li>
+    <li>
+      <p>職業: {identity.occupation}</p>
+    </li>
+  </ul>
+</BaseLayout>
